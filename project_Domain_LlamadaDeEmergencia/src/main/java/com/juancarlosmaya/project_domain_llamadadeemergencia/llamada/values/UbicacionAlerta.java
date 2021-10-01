@@ -4,15 +4,16 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class descripcionAlerta implements ValueObject {
+public class UbicacionAlerta implements ValueObject<String> {
     private final String ubicacion;
 
-    public descripcionAlerta(String ubicacion) {
+    public UbicacionAlerta(String ubicacion) {
         this.ubicacion = Objects.requireNonNull(ubicacion);
     }
 
+
     @Override
-    public Object value() {
+    public String value() {
         return this.ubicacion;
     }
 }

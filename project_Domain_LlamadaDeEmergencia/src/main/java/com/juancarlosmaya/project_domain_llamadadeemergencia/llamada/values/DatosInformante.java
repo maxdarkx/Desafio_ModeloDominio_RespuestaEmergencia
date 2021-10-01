@@ -4,11 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class datosInformante implements ValueObject<String> {
+public class DatosInformante implements ValueObject<String> {
     private final String nombre;
     private final String tipo;
 
-    public datosInformante(String nombre, String tipo) {
+    public DatosInformante(String nombre, String tipo) {
         this.nombre = Objects.requireNonNull(nombre);
         this.tipo = Objects.requireNonNull(tipo);
     }

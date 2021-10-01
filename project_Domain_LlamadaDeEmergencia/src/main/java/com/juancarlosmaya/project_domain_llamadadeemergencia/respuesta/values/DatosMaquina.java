@@ -4,12 +4,13 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class datosMaquina implements ValueObject<String> {
+public class DatosMaquina implements ValueObject<String> {
     private final String marca;
     private final String tipo;
     private final String motor;
 
-    public datosMaquina(String marca, String tipo, String motor, String especialidad) {
+
+    public DatosMaquina(String marca, String tipo, String motor) {
         this.marca = Objects.requireNonNull(marca);
         this.tipo = Objects.requireNonNull(tipo);
         this.motor = Objects.requireNonNull(motor);

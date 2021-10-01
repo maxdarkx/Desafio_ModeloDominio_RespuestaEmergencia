@@ -4,10 +4,10 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class cantidadPasajeros implements ValueObject <Integer> {
+public class CantidadPasajeros implements ValueObject <Integer> {
     private final int cantidad;
 
-    public cantidadPasajeros(int cantidad) {
+    public CantidadPasajeros(int cantidad) {
         this.cantidad = Objects.requireNonNull(cantidad);
 
         if(this.cantidad<=0)

@@ -4,11 +4,11 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class tiempoRespuesta implements ValueObject <String>{
+public class TiempoRespuesta implements ValueObject <String>{
     private final int tiempo; //segundos
 
 
-    public tiempoRespuesta(int tiempo) {
+    public TiempoRespuesta(int tiempo) {
         this.tiempo =  Objects.requireNonNull(tiempo);
     }
 

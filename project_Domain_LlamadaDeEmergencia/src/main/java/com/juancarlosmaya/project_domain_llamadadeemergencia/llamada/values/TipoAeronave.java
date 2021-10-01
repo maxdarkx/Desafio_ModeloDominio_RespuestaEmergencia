@@ -4,10 +4,10 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class tipoAlerta implements ValueObject <String> {
+public class TipoAeronave implements ValueObject <String>{
     private final String tipo;
 
-    public tipoAlerta(String tipo) {
+    public TipoAeronave(String tipo) {
         this.tipo = Objects.requireNonNull(tipo);
     }
 

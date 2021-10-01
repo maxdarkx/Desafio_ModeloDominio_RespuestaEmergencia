@@ -4,13 +4,13 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class datosPersonales implements ValueObject<String> {
+public class DatosPersonales implements ValueObject<String> {
 
     private final String nombre;
     private final String cedula;
     private final String licencia;
 
-    public datosPersonales(String nombre, String cedula, String licencia) {
+    public DatosPersonales(String nombre, String cedula, String licencia) {
 
         Integer.parseInt(cedula);
         Integer.parseInt(licencia);

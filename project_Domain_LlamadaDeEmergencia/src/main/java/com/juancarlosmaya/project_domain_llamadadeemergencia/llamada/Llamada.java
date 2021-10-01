@@ -1,12 +1,14 @@
 package com.juancarlosmaya.project_domain_llamadadeemergencia.llamada;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.events.*;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.DescripcionAlerta;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.IdLlamada;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.TipoAlerta;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.UbicacionAlerta;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Llamada extends AggregateEvent <IdLlamada>{
@@ -28,6 +30,19 @@ public class Llamada extends AggregateEvent <IdLlamada>{
 
         appendChange(new LlamadaCreada(entityId, ubicacionAlerta, descripcionAlerta, tipoAlerta, bomberoGuardia, aeronave, informante)).apply();
     }
+
+
+
+    public static Llamada from (IdLlamada id, List<DomainEvent> events)
+    {
+        return null;
+    }
+    private Llamada(IdLlamada id)
+    {
+        super(id);
+        subscribe(new LlamadaEventChange(this));
+    }
+
 
     public void anadirTipoAlerta(TipoAlerta tipoAlerta)
     {

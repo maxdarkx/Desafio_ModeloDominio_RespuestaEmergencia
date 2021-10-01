@@ -1,6 +1,7 @@
 package com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.IdLlamada;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.events.RespuestaCreada;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.events.TiempoDeRespuestaAgregado;
@@ -9,14 +10,12 @@ import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.values.Id
 import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.values.TiempoRespuesta;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.values.TipoRespuesta;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
 public class Respuesta extends AggregateEvent<IdRespuesta> {
-    ///Agregar y Cambiar tiempo de respuesta
-    //Agregar y cambiar tipo de respuesta
-    ///extra: verificar si la maquina cumple con los requisitos del maquinista
-
+     ///extra: verificar si la maquina cumple con los requisitos del maquinista
 
     protected IdLlamada codigoLlamada;
     protected TipoRespuesta tipoRespuesta;
@@ -32,6 +31,18 @@ public class Respuesta extends AggregateEvent<IdRespuesta> {
         this.bomberos = Objects.requireNonNull(bomberos);
         this.jefe = Objects.requireNonNull(jefe);
         appendChange(new RespuestaCreada(entityId, codigoLlamada, tipoRespuesta, maquina, bomberos, jefe));
+    }
+
+    public static Respuesta from(IdRespuesta id, List<DomainEvent> events)
+    {
+        var respuesta = new Respuesta(id);
+        events.forEach(respuesta::applyEvent);
+        return respuesta;
+    }
+    private Respuesta(IdRespuesta id)
+    {
+        super(id);
+        subscribe(new RespuestaEventChange(this));
     }
 
     public void agregarTiempoDeRespuesta(String tiempo)

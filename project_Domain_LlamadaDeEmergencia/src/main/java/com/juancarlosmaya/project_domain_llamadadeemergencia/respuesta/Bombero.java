@@ -34,4 +34,11 @@ public class Bombero extends Entity {
         this.tipoTraje = Objects.requireNonNull(traje);
     }
 
+    public DatosPersonales getDatosPersonales() {
+        return datosPersonales;
+    }
+
+    public TipoTraje getTipoTraje() {
+        return tipoTraje;
+    }
 }

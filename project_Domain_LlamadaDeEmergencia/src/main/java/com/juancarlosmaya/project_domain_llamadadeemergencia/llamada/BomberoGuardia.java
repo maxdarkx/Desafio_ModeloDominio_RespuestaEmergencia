@@ -24,4 +24,8 @@ public class BomberoGuardia extends Entity<IdBombero> {
         Objects.requireNonNull(licencia);
         this.datosPersonales = new DatosPersonales(nombre, cedula, licencia);
     }
+
+    public DatosPersonales getDatosPersonales() {
+        return datosPersonales;
+    }
 }

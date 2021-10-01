@@ -18,4 +18,8 @@ public class Informante extends Entity<IdInformante> {
     {
         this.datosInformante = Objects.requireNonNull(datos);
     }
+
+    public DatosInformante getDatosInformante() {
+        return datosInformante;
+    }
 }

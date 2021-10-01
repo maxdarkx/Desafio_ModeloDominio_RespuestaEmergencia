@@ -39,4 +39,11 @@ public class JefeMaquina extends Entity <IdJefe>{
         this.recursos = new Recursos(agua,espuma, pqs, herramienta);
     }
 
+    public Recursos getRecursos() {
+        return recursos;
+    }
+
+    public DatosPersonales getDatos() {
+        return datos;
+    }
 }

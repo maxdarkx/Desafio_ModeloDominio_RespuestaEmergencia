@@ -9,6 +9,8 @@ public class UbicacionAlerta implements ValueObject<String> {
 
     public UbicacionAlerta(String ubicacion) {
         this.ubicacion = Objects.requireNonNull(ubicacion);
+        if(ubicacion.length()< 2)
+            throw (new IllegalArgumentException("Debe introducir un lugar de mas de una letra"));
     }
 
 

@@ -1,13 +1,13 @@
-package com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta;
+package com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.Objects;
 
-public class TipoDeRespuestaCambiado extends DomainEvent {
-    private final String tipo;
+public class TipoDeRespuestaAgregado extends DomainEvent {
 
-    public TipoDeRespuestaCambiado(String tipo) {
+    private final String tipo;
+    public TipoDeRespuestaAgregado(String tipo) {
         super("com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.values.TipoRespuesta");
         if(tipo.length()>3)
             this.tipo =  Objects.requireNonNull(tipo);
@@ -15,7 +15,4 @@ public class TipoDeRespuestaCambiado extends DomainEvent {
             throw (new IllegalArgumentException("El tipo de respuesta debe ser una palabra de mas de dos caracteres"));
     }
 
-    public String getTipo() {
-        return tipo;
-    }
 }

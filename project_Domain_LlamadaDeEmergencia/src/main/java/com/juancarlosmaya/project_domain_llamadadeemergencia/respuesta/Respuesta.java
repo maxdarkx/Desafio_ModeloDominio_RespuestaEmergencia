@@ -3,11 +3,8 @@ package com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.IdLlamada;
-import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.events.RespuestaCreada;
-import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.events.TiempoDeRespuestaAgregado;
-import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.events.TiempoDeRespuestaCambiado;
+import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.events.*;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.values.IdRespuesta;
-import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.values.TiempoRespuesta;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.respuesta.values.TipoRespuesta;
 
 import java.util.List;

@@ -8,7 +8,10 @@ public class TipoRespuesta implements ValueObject <String>{
     private final String tipo;
 
     public TipoRespuesta(String tipo) {
-        this.tipo =  Objects.requireNonNull(tipo);
+        if(tipo.length()>3)
+            this.tipo =  Objects.requireNonNull(tipo);
+        else
+            throw (new IllegalArgumentException("El tipo de respuesta debe ser una palabra de mas de dos caracteres"));
     }
 
     @Override

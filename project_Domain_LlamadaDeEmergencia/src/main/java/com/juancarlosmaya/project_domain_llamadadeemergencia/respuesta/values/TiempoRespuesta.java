@@ -5,11 +5,14 @@ import co.com.sofka.domain.generic.ValueObject;
 import java.util.Objects;
 
 public class TiempoRespuesta implements ValueObject <String>{
-    private final int tiempo; //segundos
+    private final String tiempo; //segundos
 
-
-    public TiempoRespuesta(int tiempo) {
-        this.tiempo =  Objects.requireNonNull(tiempo);
+    public TiempoRespuesta(String tiempo) {
+        Objects.requireNonNull(tiempo);
+        if(Integer.parseInt(tiempo)>0)
+            this.tiempo = tiempo;
+        else
+            throw (new IllegalArgumentException("El tiempo de respuesta debe ser mayor que cero"));
     }
 
     @Override

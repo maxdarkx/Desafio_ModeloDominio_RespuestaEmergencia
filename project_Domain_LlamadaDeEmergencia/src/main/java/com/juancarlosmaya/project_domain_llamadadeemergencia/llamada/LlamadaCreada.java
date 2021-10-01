@@ -1,4 +1,4 @@
-package com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.events;
+package com.juancarlosmaya.project_domain_llamadadeemergencia.llamada;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.Aeronave;
@@ -8,6 +8,8 @@ import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.Desc
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.IdLlamada;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.TipoAlerta;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.llamada.values.UbicacionAlerta;
+
+import java.util.Objects;
 
 public class LlamadaCreada extends DomainEvent {
     private final IdLlamada idLlamada;
@@ -22,14 +24,14 @@ public class LlamadaCreada extends DomainEvent {
                          DescripcionAlerta descripcionAlerta, TipoAlerta tipoAlerta,
                          BomberoGuardia bomberoGuardia, Aeronave aeronave,
                          Informante informante) {
-        super("com.juancarlosmaya.project_domain_llamadadeemergencia.llamada");
-        this.idLlamada = entityId;
-        this.ubicacionAlerta = ubicacionAlerta;
-        this.descripcionAlerta = descripcionAlerta;
-        this.tipoAlerta = tipoAlerta;
-        this.bomberoGuardia = bomberoGuardia;
-        this.aeronave = aeronave;
-        this.informante = informante;
+        super("com.juancarlosmaya.project_domain_llamadadeemergencia.Llamada");
+        this.idLlamada = Objects.requireNonNull(entityId);
+        this.ubicacionAlerta = Objects.requireNonNull(ubicacionAlerta);
+        this.descripcionAlerta = Objects.requireNonNull(descripcionAlerta);
+        this.tipoAlerta = Objects.requireNonNull(tipoAlerta);
+        this.bomberoGuardia = Objects.requireNonNull(bomberoGuardia);
+        this.aeronave = Objects.requireNonNull(aeronave);
+        this.informante = Objects.requireNonNull(informante);
 
     }
 

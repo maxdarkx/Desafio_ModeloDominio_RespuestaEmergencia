@@ -32,37 +32,37 @@ public class Llamada extends AggregateEvent <IdLlamada>{
     public void anadirTipoAlerta(TipoAlerta tipoAlerta)
     {
         Objects.requireNonNull(tipoAlerta);
-        appendChange(new TipoAlertaAnadida(tipoAlerta));
+        appendChange(new TipoAlertaAnadida(tipoAlerta)).apply();
     }
 
     public void actualizarTipoAlerta(TipoAlerta tipoAlerta)
     {
         Objects.requireNonNull(tipoAlerta);
-        appendChange(new TipoAlertaActualizada(tipoAlerta));
+        appendChange(new TipoAlertaActualizada(tipoAlerta)).apply();
     }
 
     public void anadirDescripcion(String descripcion)
     {
         Objects.requireNonNull(descripcion);
-        appendChange(new DescripcionAlertaAnadida(descripcion));
+        appendChange(new DescripcionAlertaAnadida(descripcion)).apply();
     }
 
     public void cambiarDescripcion(DescripcionAlerta descripcion)
     {
         Objects.requireNonNull(descripcion);
-        appendChange(new DescripcionAlertaCambiada(descripcion));
+        appendChange(new DescripcionAlertaCambiada(descripcion)).apply();
     }
 
     public void anadirUbicacion(String ubicacion)
     {
         Objects.requireNonNull(ubicacion);
-        appendChange(new UbicacionAlertaAnadida(ubicacion));
+        appendChange(new UbicacionAlertaAnadida(ubicacion)).apply();
     }
 
     public void cambiarUbicacion(UbicacionAlerta ubicacion)
     {
         Objects.requireNonNull(ubicacion);
-        appendChange(new UbicacionAlertaCambiada(ubicacion));
+        appendChange(new UbicacionAlertaCambiada(ubicacion)).apply();
     }
 
 }

@@ -11,6 +11,8 @@ public class CrearLlamadaUseCase extends UseCase<RequestCommand<CrearLlamada>, R
     @Override
     public void executeUseCase(RequestCommand<CrearLlamada> crearLlamadaRequestCommand) {
         var command = crearLlamadaRequestCommand.getCommand();
+
+        //forma implicita
         var llamada = new Llamada(command.getIdLlamada(),
                 command.getUbicacionAlerta(),
                 command.getDescripcionAlerta(),
@@ -18,6 +20,9 @@ public class CrearLlamadaUseCase extends UseCase<RequestCommand<CrearLlamada>, R
                 command.getBomberoGuardia(),
                 command.getAeronave(),
                 command.getInformante());
+
+
+
         emit().onResponse(new ResponseEvents(llamada.getUncommittedChanges()));
 
     }

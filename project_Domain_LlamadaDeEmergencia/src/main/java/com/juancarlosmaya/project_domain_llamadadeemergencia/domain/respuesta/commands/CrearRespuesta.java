@@ -14,8 +14,8 @@ public class CrearRespuesta extends Command {
     private final Bombero bombero;
     private final JefeMaquina jefe;
 
-    public CrearRespuesta(IdRespuesta entityId, TipoRespuesta tipoRespuesta, Maquina maquina, Bombero bombero, JefeMaquina jefe) {
-        this.entityId = entityId;
+    public CrearRespuesta(IdRespuesta id, TipoRespuesta tipoRespuesta, Maquina maquina, Bombero bombero, JefeMaquina jefe) {
+        this.entityId = id;
         this.tipoRespuesta = tipoRespuesta;
         this.maquina = maquina;
         this.bombero = bombero;

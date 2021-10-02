@@ -13,15 +13,14 @@ public class JefeMaquina extends Entity <IdJefe>{
     private DatosPersonales datos;
 
 
-    public JefeMaquina(IdJefe entityId, String nombre, String cedula, String licencia, int cantidadAgua, int cantidadEspuma, int cantidadPolvoQuimico, List<String> herramientaEspecial) {
+    public JefeMaquina(IdJefe entityId, String nombre, String cedula, String licencia, int cantidadAgua, int cantidadEspuma, int cantidadPolvoQuimico) {
         super(entityId);
 
         Objects.requireNonNull(nombre);
         Objects.requireNonNull(cedula);
         Objects.requireNonNull(licencia);
-        Objects.requireNonNull(herramientaEspecial);
 
-        this.recursos = new Recursos(cantidadAgua, cantidadEspuma, cantidadPolvoQuimico, herramientaEspecial);
+        this.recursos = new Recursos(cantidadAgua, cantidadEspuma, cantidadPolvoQuimico);
         this.datos = new DatosPersonales(nombre, cedula, licencia);
     }
 
@@ -39,9 +38,9 @@ public class JefeMaquina extends Entity <IdJefe>{
         this.datos = new DatosPersonales(nombre, cedula, licencia);
     }
 
-    public void cambiarRecursos(int agua, int espuma, int pqs, List <String> herramienta)
+    public void cambiarRecursos(int agua, int espuma, int pqs)
     {
-        this.recursos = new Recursos(agua,espuma, pqs, herramienta);
+        this.recursos = new Recursos(agua, espuma, pqs);
     }
 
     public Recursos getRecursos() {

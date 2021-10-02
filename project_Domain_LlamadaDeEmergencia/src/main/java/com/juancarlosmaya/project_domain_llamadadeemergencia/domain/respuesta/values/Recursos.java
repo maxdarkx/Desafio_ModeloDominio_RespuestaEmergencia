@@ -10,13 +10,13 @@ public class Recursos implements ValueObject<String> {
     private final int cantidadAgua;
     private final int cantidadEspuma;
     private final int cantidadPolvoQuimico;
-    private final List<String> herramientaEspecial;
 
-    public Recursos(int cantidadAgua, int cantidadEspuma, int cantidadPolvoQuimico, List<String> herramientaEspecial) {
+
+    public Recursos(int cantidadAgua, int cantidadEspuma, int cantidadPolvoQuimico) {
         this.cantidadAgua = cantidadAgua;
         this.cantidadEspuma = cantidadEspuma;
         this.cantidadPolvoQuimico = cantidadPolvoQuimico;
-        this.herramientaEspecial = Objects.requireNonNull(herramientaEspecial);
+
 
         chequearCantidad(cantidadAgua);
         chequearCantidad(cantidadEspuma);
@@ -33,10 +33,8 @@ public class Recursos implements ValueObject<String> {
     public String value() {
         return  "Recursos:{" +
                         "Cantidad de agua= " + this.cantidadAgua +
-                        "Cantidad de Espuma= "+this.cantidadEspuma +
-                        "Cantidad de PQS= "+ this.cantidadPolvoQuimico+
-                        "Herramientas Especiales= "+this.herramientaEspecial.stream().map(Object::toString).collect(Collectors.joining(", "));
-
+                        ", Cantidad de Espuma= "+this.cantidadEspuma +
+                        ", Cantidad de PQS= "+ this.cantidadPolvoQuimico;
         }
 
     }

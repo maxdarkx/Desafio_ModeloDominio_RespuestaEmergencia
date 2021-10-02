@@ -1,8 +1,8 @@
 package com.juancarlosmaya.project_domain_llamadadeemergencia.domain.respuesta;
 
 import co.com.sofka.domain.generic.Entity;
-import co.com.sofka.domain.generic.Identity;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.domain.llamada.values.DatosPersonales;
+import com.juancarlosmaya.project_domain_llamadadeemergencia.domain.llamada.values.IdBombero;
 import com.juancarlosmaya.project_domain_llamadadeemergencia.domain.respuesta.values.TipoTraje;
 
 import java.util.Objects;
@@ -11,14 +11,14 @@ public class Bombero extends Entity {
     private DatosPersonales datosPersonales;
     private TipoTraje tipoTraje;
 
-    public Bombero(Identity entityId, String nombre, String cedula, String licencia, TipoTraje tipoTraje) {
-        super(entityId);
+    public Bombero(IdBombero Id, String nombre, String cedula, String licencia, String tipoTraje) {
+        super(Id);
         Objects.requireNonNull(nombre);
         Objects.requireNonNull(cedula);
         Objects.requireNonNull(licencia);
         Objects.requireNonNull(tipoTraje);
         this.datosPersonales = new DatosPersonales(nombre, cedula, licencia);
-        this.tipoTraje = tipoTraje;
+        this.tipoTraje = new TipoTraje(tipoTraje);
     }
     public Bombero(Bombero bombero) {
         super(bombero.entityId);

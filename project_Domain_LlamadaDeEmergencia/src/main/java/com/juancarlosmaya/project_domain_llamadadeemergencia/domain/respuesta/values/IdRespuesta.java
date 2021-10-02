@@ -12,9 +12,6 @@ public class IdRespuesta extends Identity {
     }
 
     public IdRespuesta(){}
-
-
-
     public static IdRespuesta of(String id) {
         return new IdRespuesta(id);
     }

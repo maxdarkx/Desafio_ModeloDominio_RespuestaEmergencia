@@ -44,6 +44,11 @@ public class Maquina extends Entity<IdMaquina> {
     }
 
     public DatosMaquina getDatos() {
-        return datos;
+        return this.datos;
+    }
+
+    public IdMaquina getIdMaquina()
+    {
+        return this.entityId;
     }
 }

@@ -1,0 +1,18 @@
+package com.juancarlosmaya.project_domain_llamadadeemergencia.domain.llamada.values;
+
+import co.com.sofka.domain.generic.ValueObject;
+
+import java.util.Objects;
+
+public class TipoAlerta implements ValueObject <String> {
+    private final String tipo;
+
+    public TipoAlerta(String tipo) {
+        this.tipo = Objects.requireNonNull(tipo);
+    }
+
+    @Override
+    public String value() {
+        return this.tipo;
+    }
+}
